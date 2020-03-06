@@ -15,7 +15,11 @@ foreach ( glob( __DIR__ . '/resources/*.csv' ) as $resource_path ) {
     $file->setFlags( SplFileObject::READ_CSV );
 
     foreach ( $file as $row ) {
-        $target_path = $row[0];
+        $target_path = trim( $row[0] );
+        if ( '' === $target_path ) {
+            continue;
+        }
+
         $target_path = $base_target_dir . preg_replace( '/\.html$/', '.md', $target_path );
         if ( ! file_exists( $target_path ) ) {
             trigger_error( sprintf( '%s does not exist', $target_path ) , E_USER_WARNING );
