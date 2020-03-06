@@ -1,0 +1,8 @@
+.*
+!.gitignore
+!.gitkeep
+
+/resources/*
+/vendor/*
+
+!/resources/.gitkeep

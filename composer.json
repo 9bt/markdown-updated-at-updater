@@ -1,0 +1,6 @@
+{
+    "name": "9bt/markdown-updated-at-updater",
+    "require": {
+        "spatie/yaml-front-matter": "^2.0"
+    }
+}
